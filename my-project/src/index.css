@@ -17,7 +17,7 @@ body {
 } */
 
 /* header a {
-  color: aliceblue;
+  color: rgb(255, 255, 255);
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
@@ -43,3 +43,4 @@ main {
   width: 225px;
   height: 300px;
 }
+
