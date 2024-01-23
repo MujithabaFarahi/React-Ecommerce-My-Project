@@ -13,17 +13,16 @@ function App() {
     <BrowserRouter>
         <div className='d-flex flex-column site-container'>
             <header>
-                <Navbar bg="dark" varient="dark">
+                <Navbar bg="dark" varient="light">
                     <Container>
                         <LinkContainer to="/">
                             <Navbar.Brand>React Ecommerse</Navbar.Brand>
                         </LinkContainer>
                     </Container>
                 </Navbar>
-                {/* <Link to="/">React Ecommerce</Link> */}
             </header>
             <main>
-                <Container>
+                <Container className={"mt-3"}>
                     <Routes>
                         <Route path="/product/:slug" element={<ProductPage/>}></Route>
                         <Route path="/" element={<HomePage/>}></Route>

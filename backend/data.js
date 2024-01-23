@@ -18,7 +18,7 @@ const data = {
             category: 'Backpack',
             image: '/images/bag2.jpg',
             price: 2990,
-            countInStock: 10,
+            countInStock: 0,
             brand: 'No brand',
             rating: 4.5,
             numReviews: 10,
