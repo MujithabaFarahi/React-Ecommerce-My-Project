@@ -8,6 +8,9 @@ import Rating from "../Components/Rating";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import {Helmet} from "react-helmet-async";
+import LoadingBox from "../Components/LoadingBox";
+import MessageBox from "../Components/MessageBox";
+import {getError} from "../Util";
 
 
 const reducer = (state, action) => {
@@ -40,7 +43,7 @@ function ProductPage() {
                 const result = await axios.get(`/api/products/slug/${slug}`);
                 dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
             } catch (err) {
-                dispatch({ type: 'FETCH_FAIL', payload: err.message });
+                dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
             }
         };
         fetchData();
@@ -48,9 +51,13 @@ function ProductPage() {
 
 
     return (
-        loading? <div>Loading...</div>
-            : error? <div>{error}</div>
-            :
+        loading ? (
+            <LoadingBox/>
+        ) : error ? (
+            <MessageBox variant={"danger"}>
+                {error}
+            </MessageBox>
+            ) :
             <div>
                 <Row>
                     <Col md={6}>

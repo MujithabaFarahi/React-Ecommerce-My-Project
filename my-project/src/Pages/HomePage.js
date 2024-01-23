@@ -1,11 +1,13 @@
-import { Link } from 'react-router-dom';
+
 // import data from '../data';
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../Components/Product';
 import {Helmet} from "react-helmet-async";
+import LoadingBox from "../Components/LoadingBox";
+import MessageBox from "../Components/MessageBox";
 
 
 const reducer = (state, action) => {
@@ -51,14 +53,20 @@ function HomePage() {
             </Helmet>
             <h1>Featured Products</h1>
             <div className="products">
-                <Row>
-                    {products.map((product) => (
-                        <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-                            <Product product={product}></Product>
-                        </Col>
-                    ))
-                    }
-                </Row>
+                {loading ? (
+                    <LoadingBox/>
+                ) : error ? (
+                    <MessageBox variant={"danger"}>{error}</MessageBox>
+                ) : (
+                    <Row>
+                        {products.map((product) => (
+                            <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
+                                <Product product={product}></Product>
+                            </Col>
+                        ))
+                        }
+                    </Row>
+                )}
             </div>
         </div>
     );
