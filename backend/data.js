@@ -2,7 +2,7 @@ const data = {
     products: [
         {
             name: 'Adidas Laptop Backpack',
-            slug: 'adidas-latop-backpack',
+            slug: 'adidas-laptop-backpack',
             category: 'Backpack',
             image: '/images/bag1.jpg',
             price: 3150,
@@ -14,7 +14,7 @@ const data = {
         },
         {
             name: 'Lenovo Laptop Backpack',
-            slug: 'lenovo-latop-backpack',
+            slug: 'lenovo-laptop-backpack',
             category: 'Backpack',
             image: '/images/bag2.jpg',
             price: 2990,
