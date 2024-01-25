@@ -1,6 +1,7 @@
 const data = {
     products: [
         {
+            _id: '1',
             name: 'Adidas Laptop Backpack',
             slug: 'adidas-laptop-backpack',
             category: 'Backpack',
@@ -13,6 +14,7 @@ const data = {
             description: 'High Quality Backpack'
         },
         {
+            _id: '2',
             name: 'Lenovo Laptop Backpack',
             slug: 'lenovo-laptop-backpack',
             category: 'Backpack',
@@ -25,6 +27,7 @@ const data = {
             description: 'High Quality Backpack'
         },
         {
+            _id: '3',
             name: 'Columbia 55L Backpack',
             slug: 'columbia-55l-backpack',
             category: 'Backpack',
@@ -37,6 +40,7 @@ const data = {
             description: 'High Quality Backpack'
         },
         {
+            _id: '4',
             name: '70L Hiking Backpack',
             slug: '70l-hiking-backpack',
             category: 'Backpack',
