@@ -10,6 +10,8 @@ import {Badge, Nav} from "react-bootstrap";
 import {useContext} from "react";
 import {Store} from "./Store";
 import CartPage from "./Pages/CartPage";
+import SigninPage from "./Pages/SigninPage";
+import SignUpPage from "./Pages/SignUpPage";
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
                     <Routes>
                         <Route path="/product/:slug" element={<ProductPage/>}></Route>
                         <Route path="/cart" element={<CartPage/>}></Route>
+                        <Route path="/signin" element={<SigninPage/>}></Route>
+                        <Route path="/signup" element={<SignUpPage/>}></Route>
                         <Route path="/" element={<HomePage/>}></Route>
                     </Routes>
                 </Container>
