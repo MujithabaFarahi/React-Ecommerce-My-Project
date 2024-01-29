@@ -26,18 +26,22 @@ export default function SignUpPage() {
                     <Form.Label>Name</Form.Label>
                     <Form.Control type={"email"} required/>
                 </Form.Group>
+
                 <Form.Group className={"mb-3"} controlId={"email"}>
                     <Form.Label>Email</Form.Label>
                     <Form.Control type={"email"} required/>
                 </Form.Group>
+
                 <Form.Group className={"mb-3"} controlId={"password"}>
                     <Form.Label>Password</Form.Label>
                     <Form.Control type={"password"} required/>
                 </Form.Group>
+
                 <Form.Group className={"mb-3"} controlId={"confirmPassword"}>
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control type={"password"} required/>
                 </Form.Group>
+
                 <div className={"mb-3"}>
                     <Button type={"submit"}>Sign Up</Button>
                 </div>

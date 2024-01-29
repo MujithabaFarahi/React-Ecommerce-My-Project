@@ -48,8 +48,8 @@ const data = {
             price: 4990,
             countInStock: 10,
             brand: 'No brand',
-            rating: 4.5,
-            numReviews: 10,
+            rating: 2.5,
+            numReviews: 9,
             description: 'High Quality Backpack'
         },
     ]
