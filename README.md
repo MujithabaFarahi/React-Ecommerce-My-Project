@@ -1,3 +1,0 @@
-#Intro
-
-add to cart
