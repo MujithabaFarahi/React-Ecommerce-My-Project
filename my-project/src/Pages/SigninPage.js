@@ -32,7 +32,7 @@ export default function SigninPage() {
             localStorage.setItem('userInfo', JSON.stringify(data));
             navigate(redirect || '/');
         } catch (err) {
-            toast.error(getError.err)
+            toast.error(getError(err));
             // alert("Invalid Email or password")
         }
     }

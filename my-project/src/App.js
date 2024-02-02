@@ -13,6 +13,7 @@ import {Store} from "./Store";
 import CartPage from "./Pages/CartPage";
 import SigninPage from "./Pages/SigninPage";
 import SignUpPage from "./Pages/SignUpPage";
+import ShippingAddressPage from "./Pages/ShippingAddressPage";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     const signoutHandler = () => {
         ctxDispatch({ type: 'USER_SIGNOUT'});
         localStorage.removeItem('userInfo');
+        localStorage.removeItem('shippingAddress');
     }
 
   return (
@@ -29,10 +31,10 @@ function App() {
         <div className='d-flex flex-column site-container'>
             <ToastContainer position={"bottom-center"} limit={1}/>
             <header>
-                <Navbar bg="dark" varient="light">
+                <Navbar bg="light" varient="light">
                     <Container>
                         <LinkContainer to="/">
-                            <Navbar.Brand>React Ecommerse</Navbar.Brand>
+                            <Navbar.Brand className={'title-logo'}>React Ecommerse</Navbar.Brand>
                         </LinkContainer>
                         <Nav className={"me-auto"}>
                             <Link to={"/cart"} className={"nav-link"}>
@@ -73,6 +75,7 @@ function App() {
                         <Route path="/product/:slug" element={<ProductPage/>}></Route>
                         <Route path="/cart" element={<CartPage/>}></Route>
                         <Route path="/signin" element={<SigninPage/>}></Route>
+                        <Route path="/shipping" element={<ShippingAddressPage/>}></Route>
                         <Route path="/signup" element={<SignUpPage/>}></Route>
                         <Route path="/" element={<HomePage/>}></Route>
                     </Routes>
