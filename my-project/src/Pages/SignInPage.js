@@ -9,7 +9,7 @@ import {Store} from "../Store";
 import {toast} from "react-toastify";
 import {getError} from "../Util";
 
-export default function SigninPage() {
+export default function SignInPage() {
     const navigate = useNavigate();
     const { search } = useLocation();
     const redirectInUrl = new URLSearchParams(search).get('redirect');
@@ -52,11 +52,11 @@ export default function SigninPage() {
             <Form onSubmit={submitHandler}>
                 <Form.Group className={"mb-3"} controlId={"email"}>
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type={"email"} required onChange={(e) => setEmail(e.target.value)}/>
+                    <Form.Control placeholder={"name@example.com"} type={"email"} required onChange={(e) => setEmail(e.target.value)}/>
                 </Form.Group>
                 <Form.Group className={"mb-3"} controlId={"password"}>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type={"password"} required onChange={(e) => setPassword(e.target.value)}/>
+                    <Form.Control placeholder={"Password"} type={"password"} required onChange={(e) => setPassword(e.target.value)}/>
                 </Form.Group>
                 <div className={"mb-3"}>
                     <Button type={"submit"}>Sign In</Button>

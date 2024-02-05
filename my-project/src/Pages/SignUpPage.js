@@ -59,19 +59,19 @@ export default function SignUpPage() {
             <Form onSubmit={submitHandler}>
                 <Form.Group className={"mb-3"} controlId={"name"}>
                     <Form.Label>Name</Form.Label>
-                    <Form.Control required onChange={(e) => setName(e.target.value)}/>
+                    <Form.Control placeholder={"Enter Your Name"} required onChange={(e) => setName(e.target.value)}/>
                 </Form.Group>
                 <Form.Group className={"mb-3"} controlId={"email"}>
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type={"email"} required onChange={(e) => setEmail(e.target.value)}/>
+                    <Form.Control placeholder={"name@example.com"} type={"email"} required onChange={(e) => setEmail(e.target.value)}/>
                 </Form.Group>
                 <Form.Group className={"mb-3"} controlId={"password"}>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type={"password"} required onChange={(e) => setPassword(e.target.value)}/>
+                    <Form.Control placeholder={"Password"} type={"password"} required onChange={(e) => setPassword(e.target.value)}/>
                 </Form.Group>
                 <Form.Group className={"mb-3"} controlId={"confirmPassword"}>
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type={"password"} required onChange={(e) => setConfirmPassword(e.target.value)}/>
+                    <Form.Control placeholder={"Confirm Password"} type={"password"} required onChange={(e) => setConfirmPassword(e.target.value)}/>
                 </Form.Group>
                 <div className={"mb-3"}>
                     <Button type={"submit"}>Sign Up</Button>

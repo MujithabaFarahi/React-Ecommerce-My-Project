@@ -56,13 +56,14 @@ export default function ShippingAddressPage() {
                 <title>Shipping Address</title>
             </Helmet>
 
-            <CheckoutSteps step1 step2></CheckoutSteps>
+            <CheckoutSteps step1 step2 ></CheckoutSteps>
             <div className={"container small-container"}>
                 <h1 className={"my-3"}>Shipping Address</h1>
                 <Form onSubmit={submitHandler}>
                     <Form.Group className={"mb-3"} controlId={"fullName"}>
                         <Form.Label>Full Name</Form.Label>
                         <Form.Control
+                            placeholder={"Enter Your Full Name"}
                             value={fullName}
                             onChange={(e) => setFullName(e.target.value)}
                             required
@@ -71,6 +72,7 @@ export default function ShippingAddressPage() {
                     <Form.Group className={"mb-3"} controlId={"address"}>
                         <Form.Label>Address</Form.Label>
                         <Form.Control
+                            placeholder={"Your Address"}
                             value={address}
                             onChange={(e) => setAddress(e.target.value)}
                             required
@@ -79,6 +81,7 @@ export default function ShippingAddressPage() {
                     <Form.Group className={"mb-3"} controlId={"city"}>
                         <Form.Label>City</Form.Label>
                         <Form.Control
+                            placeholder={"City"}
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
                             required
@@ -87,6 +90,7 @@ export default function ShippingAddressPage() {
                     <Form.Group className={"mb-3"} controlId={"postalCode"}>
                         <Form.Label>Postal Code</Form.Label>
                         <Form.Control
+                            placeholder={"Postal Code"}
                             value={postalCode}
                             onChange={(e) => setPostalCode(e.target.value)}
                             required
@@ -95,6 +99,7 @@ export default function ShippingAddressPage() {
                     <Form.Group className={"mb-3"} controlId={"country"}>
                         <Form.Label>Country</Form.Label>
                         <Form.Control
+                            placeholder={"Country"}
                             value={country}
                             onChange={(e) => setCountry(e.target.value)}
                             required

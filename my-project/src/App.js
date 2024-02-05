@@ -11,7 +11,7 @@ import {Badge, Nav, NavDropdown} from "react-bootstrap";
 import {useContext} from "react";
 import {Store} from "./Store";
 import CartPage from "./Pages/CartPage";
-import SigninPage from "./Pages/SigninPage";
+import SignInPage from "./Pages/SignInPage";
 import SignUpPage from "./Pages/SignUpPage";
 import ShippingAddressPage from "./Pages/ShippingAddressPage";
 
@@ -74,7 +74,7 @@ function App() {
                     <Routes>
                         <Route path="/product/:slug" element={<ProductPage/>}></Route>
                         <Route path="/cart" element={<CartPage/>}></Route>
-                        <Route path="/signin" element={<SigninPage/>}></Route>
+                        <Route path="/signin" element={<SignInPage/>}></Route>
                         <Route path="/shipping" element={<ShippingAddressPage/>}></Route>
                         <Route path="/signup" element={<SignUpPage/>}></Route>
                         <Route path="/" element={<HomePage/>}></Route>
@@ -83,7 +83,11 @@ function App() {
             </main>
             <footer>
                 <div className='text-center'>
-                    All Rights Reserved
+                    {/*<p>*/}
+                    {/*    Made with ❤️ by {" "}*/}
+                    {/*    <Link to={"http://localhost:5000/api/products"}>Mujithaba Farahi</Link>*/}
+                    {/*</p>*/}
+                    <p>© All Rights Reserved</p>
                 </div>
             </footer>
         </div>
