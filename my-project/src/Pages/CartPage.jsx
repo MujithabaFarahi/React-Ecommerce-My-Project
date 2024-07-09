@@ -1,4 +1,4 @@
-import {useContext} from "react";
+import React,{useContext} from "react";
 import {Store} from "../Store";
 import {Helmet} from "react-helmet-async";
 import Row from "react-bootstrap/Row";
@@ -59,7 +59,7 @@ export default  function CartPage() {
                                             <img
                                                 src={item.image}
                                                 alt={item.name}
-                                                className={"img-fluid rounded img-thumbnail"}
+                                                className={"img-fluid"}
                                             ></img>{' '}
                                             <Link to={`/product/${item.slug}`}>{item.name}</Link>
                                         </Col>

@@ -4,34 +4,27 @@ import {Form} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Axios from "axios";
-import {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Store} from "../Store";
 import {toast} from "react-toastify";
 import {getError} from "../Util";
 
-export default function SignUpPage() {
+export default function SignInPage() {
     const navigate = useNavigate();
     const { search } = useLocation();
     const redirectInUrl = new URLSearchParams(search).get('redirect');
     const redirect = redirectInUrl ? redirectInUrl : '/';
 
-    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
 
     const { state, dispatch: ctxDispatch } = useContext(Store);
     const {userInfo} =state;
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        if (password !== confirmPassword) {
-            toast.error("Passwords do no match");
-            return;
-        }
         try {
-            const { data } = await Axios.post('/api/users/signup', {
-                name,
+            const { data } = await Axios.post('/api/users/signin', {
                 email,
                 password,
             });
@@ -42,7 +35,7 @@ export default function SignUpPage() {
             toast.error(getError(err));
             // alert("Invalid Email or password")
         }
-    };
+    }
 
     useEffect(() => {
         if (userInfo) {
@@ -53,34 +46,26 @@ export default function SignUpPage() {
     return (
         <Container className={"small-container"}>
             <Helmet>
-                <title>Sign Up</title>
+                <title>Sign In</title>
             </Helmet>
-            <h1 className={"my-3"}>Sign Up</h1>
+            <h1 className={"my-3"}>Sign In</h1>
             <Form onSubmit={submitHandler}>
-                <Form.Group className={"mb-3"} controlId={"name"}>
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control required onChange={(e) => setName(e.target.value)}/>
-                </Form.Group>
                 <Form.Group className={"mb-3"} controlId={"email"}>
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type={"email"} required onChange={(e) => setEmail(e.target.value)}/>
+                    <Form.Control placeholder={"name@example.com"} type={"email"} required onChange={(e) => setEmail(e.target.value)}/>
                 </Form.Group>
                 <Form.Group className={"mb-3"} controlId={"password"}>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type={"password"} required onChange={(e) => setPassword(e.target.value)}/>
-                </Form.Group>
-                <Form.Group className={"mb-3"} controlId={"confirmPassword"}>
-                    <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type={"password"} required onChange={(e) => setConfirmPassword(e.target.value)}/>
+                    <Form.Control placeholder={"Password"} type={"password"} required onChange={(e) => setPassword(e.target.value)}/>
                 </Form.Group>
                 <div className={"mb-3"}>
-                    <Button type={"submit"}>Sign Up</Button>
+                    <Button type={"submit"}>Sign In</Button>
                 </div>
                 <div className={"mb-3"}>
-                    Already Have an Account?{' '}
-                    <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
+                    New Customer?{' '}
+                    <Link to={`/signup?redirect=${redirect}`}>Create Your Account</Link>
                 </div>
             </Form>
         </Container>
-    );
+    )
 }

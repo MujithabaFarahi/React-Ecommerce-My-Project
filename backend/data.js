@@ -68,6 +68,19 @@ const data = {
             numReviews: 9,
             description: 'High Quality Backpack'
         },
+        // {
+        //     // _id: '4',
+        //     name: 'Adidas Class Backpack',
+        //     slug: 'adidas-class-backpack',
+        //     category: 'Backpack',
+        //     image: '/images/bag4.jpg',
+        //     price: 2290,
+        //     countInStock: 20,
+        //     brand: 'No brand',
+        //     rating: 3.5,
+        //     numReviews: 10,
+        //     description: 'High Quality Backpack'
+        // },
     ]
 }
 

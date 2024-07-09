@@ -1,5 +1,5 @@
 import {useNavigate, useParams} from 'react-router-dom';
-import {useContext, useEffect, useReducer} from "react";
+import React,{useContext, useEffect, useReducer} from "react";
 import axios from "axios";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -79,14 +79,14 @@ function ProductPage() {
             ) :
             <div>
                 <Row>
-                    <Col md={6}>
+                    <Col md={4}>
                         <img
                             className={"img-large"}
                             src={product.image}
                             alt={product.name}
                         ></img>
                     </Col>
-                    <Col md={3}>
+                    <Col md={5}>
                         <ListGroup variant={"flush"}>
                             <ListGroup.Item>
                                 <Helmet>
